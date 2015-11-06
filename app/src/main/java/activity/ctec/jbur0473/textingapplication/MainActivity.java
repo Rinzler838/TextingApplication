@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View currentView)
             {
-                if(nbr.getText().toString()== "")
+                if(nbr.getText().toString().equals (""))
                 {
                     nbr.setText(getBlankNumber());
                 }
 
-                if(txt.getText().toString()== "")
+                if(txt.getText().toString().equals (""))
                 {
                     txt.setText(getRandomPhrase());
                 }
@@ -115,11 +115,11 @@ public class MainActivity extends AppCompatActivity
                     String message = txt.getText().toString();
                     sendSMS(contact, message);
 
-                    Toast.makeText(currentView.getContext(), "message was sent", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(currentView.getContext(), "Message sent", Toast.LENGTH_SHORT).show();
                 }
                 catch(Exception currentException)
                 {
-                    Toast.makeText(currentView.getContext(), "message was not sent", Toast.LENGTH_LONG).show();
+                    Toast.makeText(currentView.getContext(), "Message not sent", Toast.LENGTH_LONG).show();
                     Toast.makeText(currentView.getContext(), currentException.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
